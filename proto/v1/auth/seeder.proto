@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package auth.v1;
+
+option go_package = "github.com/maintainerd/contract/proto/auth/v1;authv1";
+
+service SeederService {
+  rpc TriggerSeeder(TriggerSeederRequest) returns (TriggerSeederResponse);
+}
+
+message TriggerSeederRequest {
+  string triggered_by = 1;
+}
+
+message TriggerSeederResponse {
+  bool success = 1;
+  string message = 2;
+}
